@@ -4,8 +4,8 @@ export default {
   async paths() {
     const octokit = new Octokit()
     const releases = await octokit.paginate(octokit.repos.listReleases, {
-      owner: 'mihonapp',
-      repo: 'mihon',
+      owner: 'mihon-ocr',
+      repo: 'mihon-ocr',
       per_page: 100,
     })
 

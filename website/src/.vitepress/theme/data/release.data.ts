@@ -16,15 +16,25 @@ export { data }
 
 export default defineLoader({
   async load(): Promise<AppRelease> {
-    const { data: stable } = await octokit.repos.getLatestRelease({
-      owner: 'mihonapp',
-      repo: 'mihon',
-    })
+    async function getLatest(owner: string, repo: string) {
+      try {
+        const { data } = await octokit.repos.getLatestRelease({ owner, repo })
+        return data
+      }
+      catch (err) {
+        // No latest release for this repo; return a minimal fallback release object
+        return {
+          tag_name: 'v0.0.0',
+          name: 'No release',
+          body: 'No release found for this repository.',
+          author: { login: owner },
+          published_at: new Date().toISOString(),
+        } as GitHubRelease
+      }
+    }
 
-    const { data: beta } = await octokit.repos.getLatestRelease({
-      owner: 'mihonapp',
-      repo: 'mihon-preview',
-    })
+    const stable = await getLatest('mihon-ocr', 'mihon-ocr')
+    const beta = await getLatest('mihon-ocr', 'mihon-ocr-preview')
 
     return { stable, beta }
   },

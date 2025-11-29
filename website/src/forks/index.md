@@ -1,6 +1,6 @@
 ---
-title: Endorsed Forks
-description: Forks are alternative versions of Mihon with exclusive features.
+title: Related Forks
+description: Forks are alternative versions of Mihon/Tachiyomi with exclusive features.
 lastUpdated: false
 editLink: false
 prev: false
@@ -34,8 +34,8 @@ features:
 import { VPHomeFeatures } from "vitepress/theme"
 </script>
 
-# Endorsed Forks
+# Related Forks
 
-Forks are alternative versions of Mihon with exclusive features.
+Forks are alternative versions of Mihon/Tachiyomi with exclusive features.
 
 <VPHomeFeatures />

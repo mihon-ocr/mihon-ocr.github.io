@@ -8,12 +8,12 @@ const downloadInformation = computed(() => ({
   beta: {
     tagName: release.beta.tag_name ?? 'r0000',
     asset: (release.beta.assets ?? [])
-      .find(a => /^mihon-r\d{4,}.apk/.test(a.name)),
+      .find(a => /^mihon-ocr-r\d{4,}.apk/.test(a.name)),
   },
   stable: {
     tagName: release.stable.tag_name ?? 'v0.00.0',
     asset: (release.stable.assets ?? [])
-      .find(a => /^mihon-v\d+\.\d+\.\d+.apk/.test(a.name)),
+      .find(a => /^mihon-ocr-v\d+\.\d+\.\d+.apk/.test(a.name)),
   },
 }))
 
@@ -41,22 +41,9 @@ function handleAnalytics(type: 'beta' | 'stable') {
         Unsupported operating system
       </p>
       <p>
-        <strong>Mihon</strong> is an <strong>Android app</strong> only.
+        <strong>MihonOCR</strong> is an <strong>Android app</strong> only.
         Use an <strong>Android device</strong> to download and install the app.
       </p>
-    </div>
-    <div v-if="!isAndroid" class="custom-block warning">
-      <p class="custom-block-title">
-        Caution
-      </p>
-      <p>
-        Any app for any operating systems other than Android called
-        <strong>Mihon</strong> is not affiliated with this project.
-      </p>
-      <blockquote>
-        For more information, read the
-        <a href="/docs/faq/general">General FAQ</a>.
-      </blockquote>
     </div>
     <div class="download-buttons">
       <a
@@ -66,18 +53,8 @@ function handleAnalytics(type: 'beta' | 'stable') {
         @click="handleAnalytics('stable')"
       >
         <IconDownload />
-        <span class="text">Mihon</span>
+        <span class="text">MihonOCR</span>
         <span class="version">{{ downloadInformation.stable.tagName }}</span>
-      </a>
-      <a
-        class="download-button secondary"
-        :download="downloadInformation.beta.asset?.name"
-        :href="downloadInformation.beta.asset?.browser_download_url"
-        @click="handleAnalytics('beta')"
-      >
-        <IconBugReport />
-        <span class="text">Mihon Beta</span>
-        <span class="version">{{ downloadInformation.beta.tagName }}</span>
       </a>
     </div>
     <span class="version-disclaimer">

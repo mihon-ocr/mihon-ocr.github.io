@@ -86,6 +86,14 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
           link: '/docs/guides/getting-started',
         },
         {
+          text: 'Dictionaries',
+          link: '/docs/guides/dictionaries',
+        },
+        {
+          text: 'Text recognition',
+          link: '/docs/guides/ocr',
+        },
+        {
           text: 'Troubleshooting',
           link: '/docs/guides/troubleshooting/',
           collapsed: true,

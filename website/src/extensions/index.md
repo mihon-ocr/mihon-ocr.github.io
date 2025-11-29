@@ -1,6 +1,6 @@
 ---
 title: Extensions
-description: Extension list for Mihon.
+description: Extension list for MihonOCR.
 lastUpdated: false
 editLink: false
 prev: false
