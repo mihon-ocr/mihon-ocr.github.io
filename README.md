@@ -1,3 +1,9 @@
+# ⚠️ Project Moved
+
+> **Note:** This project has been moved to a new home. Please visit **[yomihon.github.io](https://yomihon.github.io/)** for the latest updates and releases.
+
+---
+
 <div align="center">
 
 <a href="https://mihon-ocr.github.io">
