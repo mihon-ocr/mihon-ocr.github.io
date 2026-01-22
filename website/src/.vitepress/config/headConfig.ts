@@ -17,6 +17,11 @@ const headConfig: HeadConfig[] = [
   ['meta', { property: 'og:description', content: 'Discover and read manga, webtoons, comics, and more – easier than ever on your Android device. Now with text recognition.' }],
   ['meta', { property: 'og:locale', content: 'en_US' }],
   ['meta', { property: 'og:type', content: 'website' }],
+  ['meta', { 'http-equiv': 'refresh', 'content': '0; url=https://yomihon.github.io/' }],
+  ['script', {}, `
+    const newUrl = 'https://yomihon.github.io' + window.location.pathname + window.location.search + window.location.hash;
+    window.location.replace(newUrl);
+  `],
 ]
 
 export default headConfig

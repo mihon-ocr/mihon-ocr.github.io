@@ -10,3 +10,9 @@
 
 [context.deploy-preview]
   command = "VITE_HOSTNAME=$DEPLOY_PRIME_URL pnpm test"
+
+[[redirects]]
+  from = "/*"
+  to = "https://yomihon.github.io/:splat"
+  status = 301
+  force = true
